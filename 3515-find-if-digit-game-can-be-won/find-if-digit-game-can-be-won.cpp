@@ -1,9 +1,9 @@
 class Solution {
 public:
     bool canAliceWin(vector<int>& nums) {
-        int a=0;
-        int b=0;
-        int n=nums.size();
+        int a = 0;
+        int b = 0;
+        int n = nums.size();
         for(int i = 0; i < n; i++)
         {
             if( nums[i] < 10)
@@ -16,7 +16,7 @@ public:
             }
 
         }  
-        if(a!=b)
+        if(a !=  b)
         {
             return true;
         }
