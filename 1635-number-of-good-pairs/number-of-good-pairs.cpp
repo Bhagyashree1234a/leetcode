@@ -3,16 +3,20 @@ public:
     int numIdenticalPairs(vector<int>& nums) {
         int i,j;
         int n = nums.size();
-        int count = 0;
-        for (i=0;i<n;i++) {
-            for(j=0;j<n;j++) {
-                if (nums[i] == nums[j] && i < j) {
-                    count ++;
-                }
-
-            }
+       unordered_map<int,int> fq;
+        
+        for(auto a : nums) {
+            fq[a]++;
         }
-         return count;
+        int ans =0;
+        for(auto a : fq) {
+            int f = a.second -1;
+            ans = ans + (f*(f+1)/2);
+
+        }
+        return ans;
+
+        
         
     }
 };
