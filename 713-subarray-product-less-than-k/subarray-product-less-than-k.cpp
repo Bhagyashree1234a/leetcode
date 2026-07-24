@@ -10,9 +10,6 @@ public:
                 prod/=nums[i];
                 i++;
             }
-            if(prod < k) {
-                c++;
-            }
             ans += (j - i + 1);
         }
         return ans;
