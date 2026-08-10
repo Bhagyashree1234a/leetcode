@@ -7,10 +7,15 @@ public:
         int m = bookings.size();
         for(int i = 0; i < m; i++) {
             int f = bookings[i][0] , l = bookings[i][1], s = bookings[i][2];
-            for(int j = f-1; j <= l-1; j++) {
-                ans[j] += s;
+             ans[f-1]+=s;
+             if(l!=n){
+                ans[l] -= s;
+             }
             }
-        }
+            for(int i = 1; i < n; i++) {
+                ans[i] = ans[i]+ans[i-1];
+            }
+        
         return ans;
     }
 };
