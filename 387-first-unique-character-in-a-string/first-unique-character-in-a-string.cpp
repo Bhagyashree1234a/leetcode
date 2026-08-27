@@ -2,13 +2,12 @@ class Solution {
 public:
     int firstUniqChar(string s) {
         map<char,int>freq;
-        for(int i=0;i<s.size();i++)
-        {
-            freq[s[i]]++;
+        for(auto a : s){
+            freq[a - 'a']++;
         }
         for(int i=0;i<s.size();i++)
         {
-            if(freq[s[i]]==1)
+            if(freq[s[i] - 'a']==1)
             {
                 return i;
             }
